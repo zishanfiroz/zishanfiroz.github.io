@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Sentinel🔏</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #39FF14;
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #39FF14;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #39FF14;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #A0A0A0;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background-color: #121212;
+            border: 2px solid #39FF14;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #39FF14, 0 0 40px rgba(57, 255, 20, 0.5);
+        }
+
+        .mission {
+            margin-bottom: 30px;
+        }
+
+        .mission-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .mission-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            color: #00DDEB;
+        }
+
+        .mission h2 {
+            font-size: 1.25rem;
+            color: #00DDEB;
+            text-shadow: 0 0 5px #00DDEB;
+            text-align: left;
+        }
+
+        .mission p {
+            font-size: 1.1rem;
+            text-align: left;
+            line-height: 1.4;
+            font-family: 'Fira Code', monospace;
+            color: #D1D5DB;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* grid-cols-1 */
+            gap: 1.5rem; /* gap-6 */
+            margin-bottom: 2rem; /* mb-8 */
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+            }
+        }
+
+        .grid .section {
+            display: flex;
+            flex-direction: column; /* flex flex-col */
+            height: 100%; /* h-full */
+        }
+
+        .grid-link {
+            display: block;
+            height: 100%; /* block h-full */
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .grid-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 0.75rem; /* space-x-3 */
+        }
+
+        .grid-icon {
+            width: 32px; /* h-8 w-8 */
+            height: 32px;
+            color: #39FF14; /* text-neon-green */
+        }
+
+        .grid .section h2 {
+            font-size: 1.25rem; /* text-xl */
+            text-shadow: 0 0 5px #39FF14; /* neon-text */
+        }
+
+        .grid .section p {
+            color: #9CA3AF; /* text-gray-400 */
+            font-size: 0.875rem; /* text-sm */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .access-module {
+            margin-top: auto; /* mt-auto */
+            font-size: 0.875rem; /* text-sm */
+            color: rgba(57, 255, 20, 0.8); /* text-neon-green/80 */
+            display: flex;
+            align-items: center; /* flex items-center */
+        }
+
+        .access-module span:last-child {
+            margin-left: 0.5rem; /* ml-2 */
+        }
+
+        .access-module:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px #39FF14;
+        }
+
+        .capability-matrix {
+            margin-top: 30px;
+        }
+
+        .capability-matrix h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #39FF14;
+            text-align: center;
+        }
+
+        .skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .skill-info {
+            flex: 1;
+        }
+
+        .skill-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 5px #39FF14;
+        }
+
+        .skill-desc {
+            color: #A0A0A0;
+            font-size: 1rem;
+        }
+
+        .progress-container {
+            width: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        .progress {
+            width: 80%;
+            height: 12px;
+            background-color: #333;
+            border: 1px solid #39FF14;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 5px #39FF14;
+            margin-right: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #39FF14;
+            box-shadow: 0 0 10px #39FF14;
+            transition: width 1s ease;
+        }
+
+        .percentage {
+            font-size: 1.2rem;
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14;
+        }
+
+        .community-ops, .system-status {
+            margin-top: 30px;
+        }
+
+        .community-ops h2, .system-status h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #39FF14;
+            text-align: center;
+        }
+
+        .community-ops ul, .system-status ul {
+            list-style: none;
+        }
+
+        .community-ops li, .system-status li {
+            color: #A0A0A0;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .community-ops li::before, .system-status li::before {
+            content: ">";
+            color: #39FF14;
+            margin-right: 10px;
+            text-shadow: 0 0 5px #39FF14;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cyber Sentinel🔏</h1>
+    <p class="subtitle">Cybersecurity Researcher</p>
+
+    <div class="section mission">
+        <div class="mission-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mission-icon">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 0 0 12 18Z"></path>
+                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 0 1 12 18Z"></path>
+                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path>
+                <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path>
+                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                <path d="M19.938 10.5a4 4 0 0 1 .585.396"></path>
+                <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                <path d="M19.967 17.484A4 4 0 0 1 18 18"></path>
+            </svg>
+            <h2>MISSION DIRECTIVE</h2>
+        </div>
+        <p>DEDICATED TO FORTIFYING DIGITAL LANDSCAPES THROUGH INNOVATIVE SECURITY RESEARCH AND ETHICAL HACKING. MY MISSION IS TO PROTECT CRITICAL INFRASTRUCTURE, EXPOSE VULNERABILITIES RESPONSIBLY, AND EDUCATE THE NEXT GENERATION OF CYBER DEFENDERS. EVERY SYSTEM HAS A WEAKNESS - FINDING IT FIRST IS OUR BEST DEFENSE.</p>
+    </div>
+
+    <div class="grid">
+        <div>
+            <a class="grid-link" href="/projects">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <path d="m14.5 12.5-5-5"></path>
+                            <path d="m9.5 12.5 5-5"></path>
+                            <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                            <path d="M12 17v4"></path>
+                            <path d="M8 21h8"></path>
+                        </svg>
+                        <h2>CASE FILES</h2>
+                    </div>
+                    <p>Projects, contributions, and community impact</p>
+                    <div class="access-module">
+                        <span>Access Module</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="grid-link" href="/experience">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <h2>EXPERIENCE LOGS</h2>
+                    </div>
+                    <p>Career path & assignments</p>
+                    <div class="access-module">
+                        <span>Access Module</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="grid-link" href="/achievements">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <circle cx="12" cy="8" r="6"></circle>
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                        </svg>
+                        <h2>HONORS & AWARDS</h2>
+                    </div>
+                    <p>Bug bounty achievements & recognition</p>
+                    <div class="access-module">
+                        <span>Access Module</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="grid-link" href="/intel">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                            <path d="M10 9H8"></path>
+                            <path d="M16 13H8"></path>
+                            <path d="M16 17H8"></path>
+                        </svg>
+                        <h2>INTEL DROPS</h2>
+                    </div>
+                    <p>Blog posts & research findings</p>
+                    <div class="access-module">
+                        <span>Access Module</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="grid-link" href="Resume.html">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"></path>
+                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                            <rect width="4" height="6" x="2" y="12" rx="2"></rect>
+                            <path d="M10 12h2v6"></path>
+                            <path d="M10 18h4"></path>
+                        </svg>
+                        <h2>DECLASSIFIED RESUME</h2>
+                    </div>
+                    <p>Official credentials & clearance</p>
+                    <div class="access-module">
+                        <span>Access Module</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="grid-link" href="/contact">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <h2>SECURE CHANNEL</h2>
+                    </div>
+                    <p>Encrypted communication protocol</p>
+                    <div class="access-module">
+                        <span>Access Module</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="section capability-matrix">
+        <h2>CAPABILITY MATRIX</h2>
+        <div class="skill">
+            <div class="skill-info">
+                <div class="skill-name">DIGITAL FORENSICS</div>
+                <div class="skill-desc">Case analysis, forensic tools (e.g., SecForensic, Insight)</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <div class="percentage">75%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-info">
+                <div class="skill-name">NETWORK SECURITY</div>
+                <div class="skill-desc">Firewall config, VPN setup, UFW, cloud security</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <div class="percentage">70%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-info">
+                <div class="skill-name">PENETRATION TESTING</div>
+                <div class="skill-desc">Vulnerability scanning, exploit simulations</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <div class="percentage">70%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-info">
+                <div class="skill-name">SECURE CODING</div>
+                <div class="skill-desc">DevSecOps learning, GitHub-based cyber tools</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 65%;"></div>
+                </div>
+                <div class="percentage">65%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-info">
+                <div class="skill-name">CLOUD SECURITY</div>
+                <div class="skill-desc">OCI cert, basic AWS & Azure usage</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <div class="percentage">70%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-info">
+                <div class="skill-name">TOOL DEVELOPMENT</div>
+                <div class="skill-desc">Built forensic/security automation tools</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <div class="percentage">70%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="section community-ops">
+            <h2>COMMUNITY OPS</h2>
+            <ul>
+                <li>Cyber Rakshak Intelligence</li>
+         
+                <li>Open Source Contributor</li>
+            </ul>
+        </div>
+        <div class="section system-status">
+            <h2>SYSTEM STATUS</h2>
+            <ul>
+                <li>Cybersecurity Researcher</li>
+                <li>Bug Hunter</li>
+                <li>Content Writer</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
