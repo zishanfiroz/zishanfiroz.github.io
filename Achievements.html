@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honors & Awards - Cyber Sentinel🔏</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #39FF14;
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #39FF14;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #39FF14;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #A0A0A0;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background-color: #121212;
+            border: 2px solid #39FF14;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #39FF14, 0 0 40px rgba(57, 255, 20, 0.5);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* grid-cols-1 */
+            gap: 1.5rem; /* gap-6 */
+            margin-bottom: 2rem; /* mb-8 */
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* lg:grid-cols-2 */
+            }
+        }
+
+        .grid .section {
+            display: flex;
+            flex-direction: column; /* flex flex-col */
+            height: 100%; /* h-full */
+        }
+
+        .grid-link {
+            display: block;
+            height: 100%; /* block h-full */
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .grid-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 0.75rem; /* space-x-3 */
+        }
+
+        .grid-icon {
+            width: 32px; /* h-8 w-8 */
+            height: 32px;
+            color: #39FF14; /* text-neon-green */
+        }
+
+        .grid .section h2 {
+            font-size: 1.25rem; /* text-xl */
+            text-shadow: 0 0 5px #39FF14; /* neon-text */
+        }
+
+        .grid .section p {
+            color: #9CA3AF; /* text-gray-400 */
+            font-size: 0.875rem; /* text-sm */
+            margin-bottom: 1rem; /* mb-4 */
+            font-family: 'Fira Code', monospace;
+        }
+
+        .access-module {
+            margin-top: auto; /* mt-auto */
+            font-size: 0.875rem; /* text-sm */
+            color: rgba(57, 255, 20, 0.8); /* text-neon-green/80 */
+            display: flex;
+            align-items: center; /* flex items-center */
+        }
+
+        .access-module span:last-child {
+            margin-left: 0.5rem; /* ml-2 */
+        }
+
+        .access-module:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px #39FF14;
+        }
+    </style>
+</head>
+<body>
+    <h1>Honors & Awards🔏</h1>
+    <p class="subtitle">Recognitions and Achievements in Cybersecurity</p>
+
+    <div class="grid">
+        <!-- Pair 1 -->
+        <div>
+            <a class="grid-link" href="https://www.cert.europa.eu/hall-of-fame" target="_blank">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <circle cx="12" cy="8" r="6"></circle>
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                        </svg>
+                        <h2>EUROPEAN UNION'S HALL OF FAME</h2>
+                    </div>
+                    <p>CERT-EU</p>
+                    <div class="access-module">
+                        <span>View Recognition</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <div class="section">
+                <div class="grid-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    <h2>SENSITIVE INFORMATION DISCLOSURE</h2>
+                </div>
+                <p>IIT, Bombay</p>
+                <div class="access-module">
+                    <span>Access Module</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pair 2 -->
+        <div>
+            <div class="section">
+                <div class="grid-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    <h2>EXPOSURE OF INTERNAL FILES</h2>
+                </div>
+                <p>IIT, Delhi</p>
+                <div class="access-module">
+                    <span>Access Module</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="section">
+                <div class="grid-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    <h2>UNAUTHORIZED EXPOSURE OF EMPLOYEE DETAILS</h2>
+                </div>
+                <p>Government of Telangana</p>
+                <div class="access-module">
+                    <span>Access Module</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pair 3 -->
+        <div>
+            <a class="grid-link" href="https://www.linkedin.com/posts/md-zishan-firoz-405031204_verizon-activity-7285744689582948353-IH1R?utm_source=share&utm_medium=member_desktop&rcm=ACoAADP5PAUB_0_oPoEjQ2AKD8pE81Z4kWlTF90" target="_blank">
+                <div class="section">
+                    <div class="grid-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                            <circle cx="12" cy="8" r="6"></circle>
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                        </svg>
+                        <h2>ACCESS TO INTERNAL FILES</h2>
+                    </div>
+                    <p>Verizon</p>
+                    <div class="access-module">
+                        <span>View Recognition</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <div class="section">
+                <div class="grid-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    <h2>EXPOSURE OF CONFIDENTIAL DOCUMENT</h2>
+                </div>
+                <p>Ministry of Labour & Employment</p>
+                <div class="access-module">
+                    <span>Access Module</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pair 4 -->
+        <div>
+            <div class="section">
+                <div class="grid-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    <h2>UNAUTHORIZED ACCESS TO SYSTEM LOGS</h2>
+                </div>
+                <p>Government of Kerala</p>
+                <div class="access-module">
+                    <span>Access Module</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="section">
+                <div class="grid-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="grid-icon">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    <h2>EXPOSED PERSONAL INFORMATION</h2>
+                </div>
+                <p>Income Tax Department</p>
+                <div class="access-module">
+                    <span>Access Module</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
