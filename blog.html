@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Archives - Cyber Sentinel🔏</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #39FF14;
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #39FF14;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #39FF14;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #A0A0A0;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background-color: #121212;
+            border: 2px solid #39FF14;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            text-shadow: 0 0 10px #39FF14;
+            margin-bottom: 20px;
+        }
+
+        .post {
+            background-color: #1F1F1F;
+            border: 1px solid #39FF14;
+            border-radius: 5px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .post-icon {
+            color: #FF3333;
+            margin-top: 4px;
+        }
+
+        .post-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .post-title {
+            font-size: 1.25rem;
+            color: #FF3333;
+            font-family: 'VT323', monospace;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .post-meta svg {
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+        }
+
+        .post-details {
+            display: flex;
+            align-items: center;
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .post-details svg {
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+        }
+
+        .post-details .tag {
+            color: #FF3333;
+            margin-left: 8px;
+        }
+
+        .post-summary {
+            color: #D1D5DB;
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .post-tags span {
+            background-color: #2D2D2D;
+            color: rgba(255, 51, 51, 0.7);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .read-more {
+            color: #FF3333;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px #FF3333;
+        }
+
+        .read-more span:last-child {
+            margin-left: 8px;
+        }
+
+        .post-id {
+            color: #6B7280;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .access-module {
+            font-size: 0.875rem;
+            color: rgba(57, 255, 20, 0.8);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .access-module span:last-child {
+            margin-left: 0.5rem;
+        }
+
+        .access-module:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px #39FF14;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cyber Archives🔏</h1>
+    <p class="subtitle">Technical Research and Documentation</p>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="index.html" class="access-module" style="display: inline-flex;">
+            <span>Back to Home</span>
+            <span>→</span>
+        </a>
+    </div>
+
+    <!-- Blog Posts Section -->
+    <div class="section">
+        <h2>Blog Posts</h2>
+        <div class="post">
+            <div class="post-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                </svg>
+            </div>
+            <div class="post-content">
+                <div class="post-header">
+                    <h3 class="post-title">MaxPhisher — An Automated Phishing Tool with Extra Features</h3>
+                    <div class="post-meta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        2025-05-07
+                    </div>
+                </div>
+                <div class="post-details">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    5 min read
+                    <span class="mx-2">•</span>
+                    <span class="tag">Phishing</span>
+                </div>
+                <p class="post-summary">Explore MaxPhisher, an automated phishing tool designed with advanced features for ethical security testing.</p>
+                <div class="post-tags">
+                    <span>Phishing</span>
+                    <span>Security Tools</span>
+                    <span>Ethical Hacking</span>
+                </div>
+                <div class="post-footer">
+                    <a href="https://medium.com/p/b1b2282d8a12" class="read-more">
+                        <span>Read Article</span>
+                        <span>→</span>
+                    </a>
+                    <div class="post-id">POST-ID: 0001</div>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                </svg>
+            </div>
+            <div class="post-content">
+                <div class="post-header">
+                    <h3 class="post-title">Brute-Forcing WPS Pins with Reaver in Linux</h3>
+                    <div class="post-meta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        2025-05-07
+                    </div>
+                </div>
+                <div class="post-details">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    6 min read
+                    <span class="mx-2">•</span>
+                    <span class="tag">Wi-Fi Security</span>
+                </div>
+                <p class="post-summary">Learn how to use Reaver in Linux to brute-force WPS pins for ethical Wi-Fi security testing.</p>
+                <div class="post-tags">
+                    <span>Wi-Fi Security</span>
+                    <span>Reaver</span>
+                    <span>Ethical Hacking</span>
+                </div>
+                <div class="post-footer">
+                    <a href="https://medium.com/p/383ef0f89237" class="read-more">
+                        <span>Read Article</span>
+                        <span>→</span>
+                    </a>
+                    <div class="post-id">POST-ID: 0002</div>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                </svg>
+            </div>
+            <div class="post-content">
+                <div class="post-header">
+                    <h3 class="post-title">Ethically Hacking Android Phones with Phonesploit</h3>
+                    <div class="post-meta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        2025-05-07
+                    </div>
+                </div>
+                <div class="post-details">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    7 min read
+                    <span class="mx-2">•</span>
+                    <span class="tag">Mobile Security</span>
+                </div>
+                <p class="post-summary">Discover how Phonesploit can be used for ethical hacking of Android devices to test security vulnerabilities.</p>
+                <div class="post-tags">
+                    <span>Mobile Security</span>
+                    <span>Phonesploit</span>
+                    <span>Ethical Hacking</span>
+                </div>
+                <div class="post-footer">
+                    <a href="https://medium.com/p/b95924d50c89" class="read-more">
+                        <span>Read Article</span>
+                        <span>→</span>
+                    </a>
+                    <div class="post-id">POST-ID: 0003</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
