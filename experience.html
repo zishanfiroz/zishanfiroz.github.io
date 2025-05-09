@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Logs - Cyber Sentinel🔏</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #39FF14;
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #39FF14;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #39FF14;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #A0A0A0;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 16px;
+            width: 2px;
+            height: 100%;
+            background-color: rgba(57, 255, 20, 0.2); /* bg-neon-green/20 */
+            z-index: 0;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 48px;
+        }
+
+        .timeline-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-content.right {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+            .timeline-content.left {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 0;
+        }
+
+        @media (min-width: 768px) {
+            .connector {
+                position: relative;
+                display: block;
+            }
+        }
+
+        .connector-marker {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .connector-marker {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .connector-line {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .connector-line.right {
+                display: block;
+                height: 2px;
+                width: 24px;
+                background-color: #6B7280;
+                margin-left: 8px;
+            }
+            .connector-line.left {
+                display: block;
+                height: 2px;
+                width: 24px;
+                background-color: #6B7280;
+                margin-right: 8px;
+            }
+        }
+
+        .marker-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #121212; /* bg-terminal-dark */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .marker-circle.neon-blue {
+            border: 2px solid #00DDEB;
+            color: #00DDEB;
+        }
+
+        .marker-circle.neon-green {
+            border: 2px solid #39FF14;
+            color: #39FF14;
+        }
+
+        .marker-circle svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .terminal {
+            background-color: #121212;
+            border: 2px solid #39FF14;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 16px;
+            width: 100%;
+            max-width: 350px; /* Smaller box size */
+        }
+
+        @media (min-width: 768px) {
+            .terminal.right {
+                margin-right: 32px;
+            }
+            .terminal.left {
+                margin-left: 32px;
+            }
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        @media (min-width: 768px) {
+            .experience-header.right {
+                justify-content: flex-end;
+            }
+        }
+
+        .experience-icon-container {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .experience-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .experience-icon.neon-blue {
+            color: #00DDEB;
+        }
+
+        .experience-icon.neon-green {
+            color: #39FF14;
+        }
+
+        .experience-title {
+            font-size: 1.25rem;
+            margin-left: 8px;
+            font-family: 'VT323', monospace;
+        }
+
+        .experience-title.neon-blue {
+            color: #00DDEB;
+            text-shadow: 0 0 5px #00DDEB;
+        }
+
+        .experience-title.neon-green {
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14;
+        }
+
+        .experience-details {
+            margin-top: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .experience-details.right {
+                text-align: right;
+            }
+        }
+
+        .experience-details p.company {
+            color: #FFFFFF;
+            font-family: 'Fira Code', monospace;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .experience-details p.date,
+        .experience-details p.location {
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .experience-details span.tag {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.625rem;
+            background-color: #4B5563;
+            color: #FFFFFF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .experience-details p.description {
+            color: #D1D5DB;
+            margin-top: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+        }
+
+        .experience-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .experience-links.right {
+                justify-content: flex-end;
+            }
+        }
+
+        .experience-links a.neon-blue {
+            color: #00DDEB;
+        }
+
+        .experience-links a.neon-blue:hover {
+            color: rgba(0, 221, 235, 0.8);
+        }
+
+        .experience-links a.neon-green {
+            color: #39FF14;
+        }
+
+        .experience-links a.neon-green:hover {
+            color: rgba(57, 255, 20, 0.8);
+        }
+
+        .experience-links svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .experience-footer {
+            margin-top: 8px;
+            font-size: 0.625rem;
+            color: #6B7280;
+            font-family: 'Fira Code', monospace;
+        }
+
+        @media (min-width: 768px) {
+            .experience-footer.right {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        .access-module {
+            font-size: 0.875rem;
+            color: rgba(57, 255, 20, 0.8);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .access-module span:last-child {
+            margin-left: 0.5rem;
+        }
+
+        .access-module:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px #39FF14;
+        }
+    </style>
+</head>
+<body>
+    <h1>Experience Logs🔏</h1>
+    <p class="subtitle">Professional Milestones & Contributions</p>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="index.html" class="access-module" style="display: inline-flex;">
+            <span>Back to Home</span>
+            <span>→</span>
+        </a>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- Cybersecurity Research Intern (Right) -->
+        <div class="timeline-item">
+            <div class="timeline-content right">
+                <div class="connector">
+                    <div class="connector-marker">
+                        <div class="connector-line right"></div>
+                        <div class="marker-circle neon-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal right">
+                    <div class="experience-header right">
+                        <div class="experience-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="experience-icon neon-blue">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                            </svg>
+                        </div>
+                        <h3 class="experience-title neon-blue">Cybersecurity Research Intern</h3>
+                    </div>
+                    <div class="experience-details right">
+                        <p class="company">PurpleSynapz</p>
+                        <p class="date">Feb 2025 - Present</p>
+                        <p class="location">Remote</p>
+                        <span class="tag">🔬 Internship</span>
+                        <p class="description">Analyzed and investigated security logs from Zeek for intrusion detection and network monitoring. Refined and customized Zeek scripts for better automation of network monitoring and incident detection.</p>
+                        <div class="experience-links right">
+                            <a href="https://www.linkedin.com/company/purplesynapz/" title="Visit LinkedIn" target="_blank" rel="noopener noreferrer" class="neon-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="experience-footer right">
+                        <span>LOG-ID: EXP-001</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bug Hunter (Left) -->
+        <div class="timeline-item">
+            <div class="timeline-content left">
+                <div class="connector">
+                    <div class="connector-marker">
+                        <div class="connector-line left"></div>
+                        <div class="marker-circle neon-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal left">
+                    <div class="experience-header">
+                        <div class="experience-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="experience-icon neon-green">
+                                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="experience-title neon-green">Bug Hunter</h3>
+                    </div>
+                    <div class="experience-details">
+                        <p class="company">Freelancer</p>
+                        <p class="date">Oct 2024 - Present</p>
+                        <p class="location">Remote</p>
+                        <span class="tag">🛡️ Freelance</span>
+                        <p class="description">Found vulnerabilities in top government bodies.</p>
+                        <div class="experience-links">
+                            <a href="https://www.linkedin.com/in/md-zishan-firoz-405031204/" title="Visit LinkedIn" target="_blank" rel="noopener noreferrer" class="neon-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="experience-footer">
+                        <span>LOG-ID: EXP-002</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Content Writer (Right) -->
+        <div class="timeline-item">
+            <div class="timeline-content right">
+                <div class="connector">
+                    <div class="connector-marker">
+                        <div class="connector-line right"></div>
+                        <div class="marker-circle neon-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal right">
+                    <div class="experience-header right">
+                        <div class="experience-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="experience-icon neon-blue">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                            </svg>
+                        </div>
+                        <h3 class="experience-title neon-blue">Technical Content Writer</h3>
+                    </div>
+                    <div class="experience-details right">
+                        <p class="company">GeeksForGeeks</p>
+                        <p class="date">Apr 2023 - Apr 2024</p>
+                        <p class="location">Remote</p>
+                        <span class="tag">✍️ Freelance</span>
+                        <p class="description">Authored and published high-quality technical articles on cybersecurity tools, contributing to the education of a wide cyber audience. Collaborated with editors and the content team to create tutorials and problem-solving guides aligned with current industry trends.</p>
+                        <div class="experience-links right">
+                            <a href="https://www.linkedin.com/company/geeksforgeeks/" title="Visit LinkedIn" target="_blank" rel="noopener noreferrer" class="neon-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="experience-footer right">
+                        <span>LOG-ID: EXP-003</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
